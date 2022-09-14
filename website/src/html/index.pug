@@ -1,11 +1,6 @@
 |<!DOCTYPE html>
 html
-    head
-        title Pug to html
-        link(rel="stylesheet" href="../styles/main.min.css")
-        script(src="../../node_modules/jquery/dist/jquery.min.js")
-        script(src="../js/bundle.min.js")
+    include includes/head.pug
     body 
-        p Hello, World! hope this is working now..
-        p No fckin way! 
-        .mlg Now i can do whatever i want!!!!
+        include includes/header.pug
+ 

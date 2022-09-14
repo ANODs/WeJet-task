@@ -45,9 +45,9 @@ function js() {
         .pipe(browsersync.stream());
 }
 
-// CSS function 
+// Pug function
 
-function html() {
+function pug() {
     const source = './src/html/index.pug';
 
     return src(source)
@@ -59,6 +59,8 @@ function html() {
         .pipe(dest('./public/html/'))
         .pipe(browsersync.stream());
 }
+
+// CSS function 
 
 function css() {
     const source = './src/styles/main.sass';
@@ -82,7 +84,8 @@ function css() {
 
 function watchFiles() {
     watch('./src/styles/*', css);
-    watch('./src/html/*', html);
+    watch('./src/html/index.pug', pug);
+    watch('./src/html/includes/*', pug);
     watch('./src/scripts/*', js);
     // watch('./src/img/*', img);
 }
@@ -101,5 +104,5 @@ function browserSync() {
 // Tasks to define the execution of the functions simultaneously or in series
 
 exports.watch = parallel(browserSync, watchFiles);
-exports.default = series(clear, parallel(html, css, js));
+exports.default = series(clear, parallel(pug, css, js));
     
