@@ -1,5 +1,3 @@
-.bcgImg 
-    img(src="../../assets/photos/space_bg.jpg", height="100wh")
 header#header.p-0
     nav.navbar.navbar-expand
         .container-fluid.p-0
@@ -8,14 +6,24 @@ header#header.p-0
             .collapse.navbar-collapse.d-flex.justify-content-end
                 ul.navbar-nav.align-items-end
                     li.nav-item.p-0
-                        a.nav-link.active.p-0(aria-current="page" href="#") Текст
+                        a.nav-link.p-0(aria-current="page" href="#text") Текст
                     li.nav-item.p-0
-                        a.nav-link.p-0(aria-current="page" href="#") Карточки
+                        a.nav-link.p-0(aria-current="page" href="#cards") Карточки
                     li.nav-item.p-0
-                        a.nav-link.p-0(aria-current="page" href="#") Скролл
+                        a.nav-link.p-0(aria-current="page" href="#scroll") Скролл
                     li.nav-item.p-0
-                        a.nav-link.p-0(aria-current="page" href="#") Слайдер
-    h1 Привет! Я твое
-    .spaceman
-    h1 тестовое задание
-    p Я состою из разнообразных блоков и элементов, которые круто смотрятся вместе, особенно если их дополнить простой анимацией. Например, в этом блоке, космонавт должен парить при скролле при помощи параллакс-эффекта.
+                        a.nav-link.p-0(aria-current="page" href="#slider") Слайдер
+    .container
+        .row
+            .col-12.text-center
+                h1.headerTitleWhite Привет! Я твое
+            .col-12
+                .spaceman
+                    img(src="../../assets/photos/space_astronaut.png" data-parallax="0.02")
+            .col-12.text-center
+                h1.headerTitle тестовое задание
+            .col-12.d-flex.justify-content-center
+                p.headerSubTitle.text-center Я состою из разнообразных блоков и элементов, которые круто смотрятся вместе, особенно если их дополнить простой анимацией. Например, в этом блоке, космонавт должен парить при скролле при помощи параллакс-эффекта.
+    a.arrowBottom(href="#text")
+        p Я готов!
+        img(src="../../assets/icons/arrow.svg", alt="")

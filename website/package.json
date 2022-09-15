@@ -8,7 +8,7 @@
     "pug-cli": "^1.0.0-alpha6"
   },
   "scripts": {
-    "start": "-w gulp"
+    "start": "npx gulp watch"
   },
   "name": "website",
   "version": "1.0.0",

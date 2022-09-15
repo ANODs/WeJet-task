@@ -1,6 +1,27 @@
 *, *::after, *::before
     box-sizing: border-box !important
 
+*
+    scrollbar-width: auto
+    scrollbar-color: #ffffff #ffffff
+
+
+*::-webkit-scrollbar
+    width: 0px
+
+
+*::-webkit-scrollbar-track
+    background: #ffffff
+
+
+*::-webkit-scrollbar-thumb
+    background-color: #ffffff
+    border-radius: 100px
+    border: 0px solid #ffffff
+
+a
+    text-decoration: none !important
+
 @font-face
   font-family: Montserrat
   src: url(../../assets/fonts/Montserrat-Medium.ttf)
@@ -20,16 +41,76 @@ $accent: #00CAE5
 $gray: #A3B9C2
 $coldWhite: #EEF5F6
 
-header 
-    > h1
+.loader
+    z-index: 200
+    height: 10px
+    background-color: #000
+    position: absolute
+
+@keyframes preloader
+    0% 
+        clip-path: inset(30% 100% 60% 0)
+
+    50% 
+        clip-path: inset(30% 0 60% 0)
+	
+    100% 
+        clip-path: inset(0 0 0 0)
+
+.content
+    transition: 0.4s
+    animation: preloader 3s ease 0s 1 normal forwards
+
+header
+    position: absolute
+    width: 100vw
+    height: 100vh
+    top: 0
+
+.headerTitle
+    z-index: 0
+    position: relative
+    font-size: 80px
+    font-family: Russo
+    color: $accent
+    &White
+        text-shadow: 0 0 2px #000
+        z-index: 100
+        position: relative
+        margin-top: 170px
         font-size: 80px
         font-family: Russo
-        color: $accent
-    > h1:nth-child(2)
         color: $coldWhite
-    > p
-        font-size: 12px
 
+
+@keyframes rotate-center
+    0%
+        -webkit-transform: rotate(0)
+        transform: rotate(0)
+    100%
+        -webkit-transform: rotate(8deg)
+        transform: rotate(8deg)
+
+
+.spaceman
+    z-index: 50
+    height: 0
+    width: 100%
+    position: relative
+    animation: rotate-center 6s ease-in-out infinite alternate-reverse both
+    img
+        width: 256px
+        height: 256px
+        position: absolute
+        top: -180px
+        right: 20%
+
+.headerSubTitle
+    letter-spacing: 0.8px
+    max-width: 528px
+    margin-top: $dunit
+    font-size: 12px
+    color: $gray
 
 nav
     padding: $dunit $ounit !important
@@ -41,14 +122,119 @@ a.nav-link
     margin: 0 25px
     font-size: 16px
     font-family: Montserrat
+    &:hover
+        color: $fcolorLight !important
+        transition: ease-out .6s
 
 ul.navbar-nav
     height: 45px
 
 .bcgImg 
-    position: absolute
+    // position: absolute
     height: 100vh
+    top: 0
     img
         height: 100vh
         width: 100vw
         overflow: hidden
+
+.arrowBottom
+    width: 80px
+    height: 70px
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%) 
+    cursor: pointer
+    p   
+        margin: 0px
+        text-align: center
+        width: 100%
+        font-family: Montserrat
+        font-size: 12px
+        color: $fcolorLight
+        
+    img
+        transition: .2s ease-out
+        position: relative
+        left: 50%
+        top: 0px
+        transform: translateX(-50%) rotate(90deg)
+        height: 10px
+        width: 16px
+        filter: invert(1)
+    &:hover
+        img
+            transition: .2s
+            top: 10px
+            transform: translateX(-50%) rotate(90deg)
+
+#text
+    overflow: hidden
+    background: $coldWhite
+    padding: 196px 0
+    h2
+        margin: 0 $ounit
+        max-width: 512px
+        font-size: 60px
+        font-family: Russo
+        color: $fcolorDark
+        span:nth-child(2)
+            color: $accent
+    
+    p
+        margin: 0 $ounit
+        font-family: Montserrat
+        line-height: 24px
+        font-size: 14px
+        color: $fcolorDark
+        max-width: 450px
+
+    .arrowForm 
+        margin: 40px $ounit 0 $ounit
+        cursor: pointer
+        span
+            filter: invert(60%) sepia(83%) saturate(1915%) hue-rotate(143deg) brightness(98%) contrast(101%)
+            font-size: 14px
+            font-family: Montserrat
+        img
+            transition: .2s
+            margin-left: 10px
+            height: 11px
+            width: 17px
+            //если вы это заметили, то знайте, тут все рассчитанно https://codepen.io/sosuke/pen/Pjoqqp
+            filter: invert(60%) sepia(83%) saturate(1915%) hue-rotate(143deg) brightness(98%) contrast(101%)
+        &:hover
+            span
+                filter: invert(85%) sepia(24%) saturate(4285%) hue-rotate(144deg) brightness(95%) contrast(94%)
+                
+            img
+                transition: .2s
+                margin-left: 20px
+                filter: invert(85%) sepia(24%) saturate(4285%) hue-rotate(144deg) brightness(95%) contrast(94%)
+
+#image
+    overflow: hidden
+    background: $fcolorDark
+    max-height: 755px
+    h2
+        margin: 200px $ounit 0 $ounit
+        max-width: 512px
+        font-size: 60px
+        font-family: Russo
+        color: $fcolorLight
+        span:nth-child(2)
+            color: $accent
+    
+    p
+        margin: 50px $ounit 0 $ounit
+        font-family: Montserrat
+        line-height: 24px
+        font-size: 14px
+        color: $gray
+        max-width: 450px
+
+#cards
+    height: 900px
+    background: rgb(255,255,255)
+    background: linear-gradient(-207deg, rgba(255,255,255,1) 50%, rgba(238,245,246,1) 50%)
