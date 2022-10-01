@@ -321,6 +321,114 @@ ul.navbar-nav
                 transition: .2s
                 opacity: 1
 
-        
-
-                
+#scroll
+    background: $fcolorDark
+    position: relative
+    height: 2035px
+    .elemWrapper
+        pointer-events: none
+        display: flex
+        justify-content: center
+        height: 600px
+        padding: 0
+        margin: -110px 0 150px 0
+        .bgParallax
+            padding: 0
+            width: calc( 100% * 0.7)
+            height: 2035px
+            background-color: $fcolorDark
+            background-image: url('../../assets/photos/johny-goerend-Oz2ZQ2j8We8-unsplash.jpg')
+            background-repeat: no-repeat
+            background-attachment: fixed
+            background-position: center
+            mask: url('../../assets/photos/iMac_flat_mask.png')
+            mask-size: contain
+            mask-repeat: no-repeat
+        .imacWrapper
+            width: calc( 100% * 0.7)
+            padding: 0
+            margin: 0
+            position: absolute
+    h1
+        margin: 200px 0 0 0
+        text-align: center
+        font-size: 60px
+        font-family: Russo
+        letter-spacing: 2px
+        line-height: 70px
+        color: $coldWhite
+        span
+            display: block
+        span:nth-child(3)
+            color: $accent
+    p
+        margin: 50px 0 0 0
+        font-family: Montserrat
+        line-height: 24px
+        font-size: 14px
+        color: $gray
+        text-align: center
+    .scroll
+        &Left, &Right
+            overflow: hidden
+            white-space: nowrap
+            letter-spacing: 2px
+            line-height: 70px
+            font-family: Russo
+            font-size: 60px
+            display: inline-block
+            width: 100vw
+            color: #555
+            margin-top: 20px
+        &Left    
+            margin-top: 50px
+            span
+                color: $accent
+    .icons
+        padding: 0 120px
+        margin-top: 150px
+        text-align: center
+        .col
+            margin: 0 auto
+            padding: 0
+            max-width: 354px 
+        div:hover
+            transition: all .2s
+            img 
+                filter: none  
+                filter: invert(100%)  
+            h3,p  
+                color: $fcolorLight !important
+            p::after
+                bottom: -40px
+                opacity: 1
+                background: $fcolorLight !important
+        h3
+            transition: all .2s
+            letter-spacing: 2px
+            line-height: 40px
+            font-family: Russo
+            font-size: 30px
+            color: $gray
+        img
+            transition: all .2s
+            filter: invert(78%) sepia(26%) saturate(175%) hue-rotate(152deg) brightness(90%) contrast(87%)
+            margin-bottom: 30px
+            width: 42px
+        p
+            transition: all .2s
+            position: relative
+            margin: 0
+            margin-top: 20px
+            &::after
+                transition: all .2s
+                display: block
+                left: 50%
+                bottom: -50px
+                position: absolute
+                content: ''
+                opacity: 0
+                background: $gray
+                width: 162px
+                height: 5px
+                transform: translate(-50%,0)

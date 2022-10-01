@@ -40,4 +40,35 @@
                 .card-img-overlay
                     h1.card-title Фотография на фоне карточки не должна мешать
                     p.card-text Текст здесь на первом месте
-
+#scroll.container-fluid 
+    .row.align-items-center.justify-content-between
+        h1 
+            span Добавим динамики: 
+            span элементы реагируют 
+            span на скролл
+    .row.align-items-center.justify-content-between
+        p Блок простой по составу, но каждый его элемент должен приходить <br> в движение при скролле страницы.
+    .row.align-items-center.justify-content-between
+        .elemWrapper
+            img(class="img-fluid imacWrapper" src="../../assets/photos/iMac_flat.png" alt="ImacImg")
+            .bgParallax 
+                .text пук-пук-пук-пук
+    .row.align-items-center.justify-content-between
+        p Строки текста, расположенные ниже, при скролле должны сами по себе <br> двигаться, как бесконечные бегущие строки.
+    .row.scrollLeft 
+        div / Эта строка должна двигаться <span>влево</span> / Эта строка должна двигаться <span>влево</span> / Эта строка должна двигаться <span>влево</span> /
+    .row.scrollRight 
+        div / А эта строка должна двигаться <span>вправо</span> / А эта строка должна двигаться <span>вправо</span> / А эта строка должна двигаться <span>вправо</span> /
+    .row.icons 
+        .col 
+            img(class="img-fluid" src="../../assets/icons/coffee.svg" alt="ImacImg")
+            h3 Иконка и текст
+            p Иконки с описанием расположены в 3 колонки и появляются при скролле по очереди
+        .col 
+            img(class="img-fluid" src="../../assets/icons/feather.svg" alt="ImacImg")
+            h3 Анимация
+            p Появление иконок происходит через плавную смену прозрачности и небольшой подъем
+        .col
+            img(class="img-fluid" src="../../assets/icons/star.svg" alt="ImacImg")
+            h3 При наведении
+            p Также все иконки должны реагировать на наведение курсора, по примеру этой иконки. 
