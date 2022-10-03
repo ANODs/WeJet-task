@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    console.clear();
 
     $('#header').on('mousemove',(e)=>{e.preventDefault()
         let spaceman = document.querySelector('.spaceman > img');

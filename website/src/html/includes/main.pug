@@ -58,11 +58,11 @@
     .row.scrollLeft(data-scroll data-scroll-direction="horizontal")
         div.d-inline / Эта строка должна двигаться <span>влево</span> /
         div.d-inline Эта строка должна двигаться <span>влево</span>
-        div.d-inline / Эта строка должна двигаться <span>влево</span> /
-    .row.scrollRight 
+        div.d-inline / Эта строка должна двигаться <span>влево</span>
+    .row.scrollRight
         div.d-inline / А эта строка должна двигаться <span>вправо</span> /
         div.d-inline А эта строка должна двигаться <span>вправо</span>
-        div.d-inline / А эта строка должна двигаться <span>вправо</span> /  
+        div.d-inline / А эта строка должна двигаться <span>вправо</span>  
     .row.icons
         .col 
             img(class="img-fluid" src="../../assets/icons/coffee.svg" alt="ImacImg")
@@ -76,4 +76,40 @@
             img(class="img-fluid" src="../../assets/icons/star.svg" alt="ImacImg")
             h3 При наведении
             p Также все иконки должны реагировать на наведение курсора, по примеру этой иконки. 
+
+#slidersec.container-fluid 
+    .row
+        h1 
+            span И снова текст: 
+            span несколько абзацев
+            span в слайдере
+    .row
+        #slider.slider
+            .wrapper
+                #slides.slides
+                    span.slide
+                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                        i Lorem ipsum dolor sit amet.
+                    span.slide 
+                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                        i Lorem ipsum dolor sit amet.
+                    span.slide 
+                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                        i Lorem ipsum dolor sit amet.
+                    span.slide 
+                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                        i Lorem ipsum dolor sit amet.
+                    span.slide 
+                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                        i Lorem ipsum dolor sit amet.
+#prefooter.container-fluid 
+    .bg
+    .row 
+        .col
+            h1
+                span Заверши страницу
+                span баннером с кнопкой
+    .row 
+        .col
+            button.btn(type="button") Открыть форму!
 
