@@ -51,7 +51,7 @@ $coldWhite: #EEF5F6
     0% 
         clip-path: inset(30% 100% 60% 0)
 
-    50% 
+    90% 
         clip-path: inset(30% 0 60% 0)
 	
     100% 
@@ -66,7 +66,16 @@ header
     width: 100vw
     height: 100vh
     top: 0
-
+    opacity: 0
+    &.visible
+        .headerTitleWhite
+        text-shadow: 0 0 2px #000
+        transition: .3s
+        opacity: 1
+    &.active
+        transition: .3s
+        // z-index: 100
+        opacity: 1
 .headerTitle
     z-index: 0
     position: relative
@@ -74,7 +83,6 @@ header
     font-family: Russo
     color: $accent
     &White
-        text-shadow: 0 0 2px #000
         z-index: 100
         position: relative
         margin-top: 170px
@@ -326,6 +334,7 @@ ul.navbar-nav
     position: relative
     height: 2035px
     .elemWrapper
+        // min-width: 1380px
         pointer-events: none
         display: flex
         justify-content: center
@@ -334,18 +343,34 @@ ul.navbar-nav
         margin: -110px 0 150px 0
         .bgParallax
             padding: 0
-            width: calc( 100% * 0.7)
+            min-width: 1380px
+            width: 1380px
             height: 2035px
             background-color: $fcolorDark
             background-image: url('../../assets/photos/johny-goerend-Oz2ZQ2j8We8-unsplash.jpg')
             background-repeat: no-repeat
             background-attachment: fixed
             background-position: center
+            background-size: 700px
             mask: url('../../assets/photos/iMac_flat_mask.png')
             mask-size: contain
             mask-repeat: no-repeat
+            .text
+                width: 525px
+                transform: translate(-50%, calc(50% + 25px))
+                left: 50%
+                bottom: 50%
+                position: fixed
+                display: block
+                color: #fff
+                font-family: Russo
+                font-size: 40px
+                line-height: 50px
+                word-spacing: 2px
+
         .imacWrapper
-            width: calc( 100% * 0.7)
+            min-width: 1380px
+            width: 1380px
             padding: 0
             margin: 0
             position: absolute
@@ -392,6 +417,12 @@ ul.navbar-nav
             margin: 0 auto
             padding: 0
             max-width: 354px 
+            opacity: 0
+            margin-top: 20px
+            &.fadeIn
+                margin-top: 0
+                transition: 1s
+                opacity: 1
         div:hover
             transition: all .2s
             img 

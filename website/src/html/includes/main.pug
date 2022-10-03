@@ -52,14 +52,18 @@
         .elemWrapper
             img(class="img-fluid imacWrapper" src="../../assets/photos/iMac_flat.png" alt="ImacImg")
             .bgParallax 
-                .text пук-пук-пук-пук
+                .text Это изображение зафиксировано, но&nbsp;при&nbsp;скролле создается <br> ощущение, что&nbsp;оно&nbsp;движется внутри экрана.
     .row.align-items-center.justify-content-between
         p Строки текста, расположенные ниже, при скролле должны сами по себе <br> двигаться, как бесконечные бегущие строки.
-    .row.scrollLeft 
-        div / Эта строка должна двигаться <span>влево</span> / Эта строка должна двигаться <span>влево</span> / Эта строка должна двигаться <span>влево</span> /
+    .row.scrollLeft(data-scroll data-scroll-direction="horizontal")
+        div.d-inline / Эта строка должна двигаться <span>влево</span> /
+        div.d-inline Эта строка должна двигаться <span>влево</span>
+        div.d-inline / Эта строка должна двигаться <span>влево</span> /
     .row.scrollRight 
-        div / А эта строка должна двигаться <span>вправо</span> / А эта строка должна двигаться <span>вправо</span> / А эта строка должна двигаться <span>вправо</span> /
-    .row.icons 
+        div.d-inline / А эта строка должна двигаться <span>вправо</span> /
+        div.d-inline А эта строка должна двигаться <span>вправо</span>
+        div.d-inline / А эта строка должна двигаться <span>вправо</span> /  
+    .row.icons
         .col 
             img(class="img-fluid" src="../../assets/icons/coffee.svg" alt="ImacImg")
             h3 Иконка и текст
@@ -72,3 +76,4 @@
             img(class="img-fluid" src="../../assets/icons/star.svg" alt="ImacImg")
             h3 При наведении
             p Также все иконки должны реагировать на наведение курсора, по примеру этой иконки. 
+
