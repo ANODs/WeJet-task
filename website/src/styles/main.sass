@@ -1,10 +1,23 @@
+
 *, *::after, *::before
     box-sizing: border-box !important
+
+body
+    background: #222 !important
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+  -webkit-appearance: none
+  margin: 0
+
+input[type=number] 
+  -moz-appearance: textfield
+
 
 *
     scrollbar-width: auto
     scrollbar-color: #ffffff #ffffff
-
 
 *::-webkit-scrollbar
     width: 0px
@@ -19,6 +32,9 @@
     border-radius: 100px
     border: 0px solid #ffffff
 
+.blured
+    *:not(.popup, .popup *)
+        filter: blur(10px)
 
 a
     text-decoration: none !important
@@ -48,6 +64,11 @@ $fcolorDark: #222
 $accent: #00CAE5
 $gray: #A3B9C2
 $coldWhite: #EEF5F6
+
+::selection
+    color: $fcolorLight
+    background: $accent
+    
 
 .loader
     z-index: 200
@@ -207,6 +228,7 @@ ul.navbar-nav
         max-width: 450px
 
     .arrowForm 
+        width: 180px
         margin: 40px $ounit 0 $ounit
         cursor: pointer
         span
@@ -679,4 +701,141 @@ ul.navbar-nav
         bottom: 50px
         left: 50%
         transform: translateX(-50%)
-                
+
+#popup
+    padding: 78px 96px
+    z-index: 500
+    background: $fcolorDark
+    width: 930px
+    height: 740px
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    .col 
+        position: relative
+    h1
+        font-family: Russo
+        font-size: 60px
+        line-height: 70px
+        word-spacing: 2px
+        color: $accent
+        span:nth-child(2)
+            display: block
+            color: $fcolorLight
+    .x-mark
+        cursor: pointer
+        opacity: .3
+        filter: invert(1)
+        width: 20px
+        height: 20px
+        position: absolute
+        right: 43px
+        top: 43px
+
+    .inputWrapper
+        transition: .3s
+        position: relative
+        height: 54px
+        input
+            padding: 0 0 8px 0
+            font-size: 30px
+            font-family: Russo
+            height: 100%
+            display: block
+            margin-top: 78px
+            width: 100%
+            background: none
+            border: none
+            border-bottom: 2px solid $fcolorLight
+            color: $fcolorLight  
+            &:focus
+                outline: none
+        &::before, &::after
+            transition: .3s
+            font-size: 24px
+            font-family: Montserrat
+            color: $fcolorLight
+            z-index: -10
+            display: block
+            position: absolute
+            top: 0
+            left: 0 
+
+    .row:nth-child(3)
+        .inputWrapper:hover::after
+            transform: translate(0, -5px)
+        .inputWrapper::after
+            content: 'Представтесь'
+        .inputWrapper.active::after
+            color: $accent
+            transform: translate(0, -100%)
+            font-size: 11px
+
+        .inputWrapper::before
+            opacity: 0
+            font-size: 30px
+            font-family: Russo
+            content: 'Иванов Иван Иванович'
+        .inputWrapper.active::before
+            opacity: 1
+            font-size: 30px
+            font-family: Russo
+        .inputWrapper.texted::before
+            display: none !important
+
+    .row:nth-child(4)
+        .inputWrapper:hover::after
+            transform: translate(0, -5px)
+        .inputWrapper::after
+            content: 'Ваш номер телефона'
+        .inputWrapper.active::after
+            color: $accent
+            transform: translate(0, -100%)
+            font-size: 11px
+        
+        .inputWrapper::before
+            opacity: 0
+            font-size: 30px
+            font-family: Russo
+            content: '+7 (ХХХ) ХХХ ХХ ХХ'
+        .inputWrapper.active::before
+            opacity: 1
+            font-size: 30px
+            font-family: Russo
+        .inputWrapper.texted::before
+            display: none !important
+
+    .btn
+        z-index: 300
+        margin-top: 90px
+        transition: .2s
+        position: relative
+        padding: 26px 0
+        width: 354px
+        font-size: 16px
+        line-height: 16px
+        font-family: Montserrat
+        color: $fcolorLight
+        border: 2px solid $fcolorLight
+        border-radius: 0
+        &::after
+            transition: .2s
+            z-index: 100
+            content: ''
+            position: absolute
+            top: 10px
+            left: 10px
+            border-right: 2px solid $fcolorLight
+            border-bottom: 2px solid $fcolorLight
+            width: 352px
+            height: 70px
+        &:hover
+            background: $fcolorLight
+            color: $fcolorDark
+            margin: 95px 0 0 5px
+            transition: .2s margin
+            &::after
+                transition: .2s
+                top: 5px
+                left: 5px

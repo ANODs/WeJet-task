@@ -1,0 +1,21 @@
+form#popup.container-fluid.popup.d-none
+    .row.align-items-center.justify-content-between
+        .col 
+            h1  
+                span Это что? 
+                span Это колбэк
+    .row(style="position: absolute;width: 100%;left: 0;top: 0;")
+        .col
+            .x-mark 
+                img(class="img-fluid" src="../../assets/icons/close.svg" alt="close")
+    .row 
+        .col 
+            .inputWrapper 
+                input(type='name')
+    .row
+        .col
+            .inputWrapper 
+                input(type='number')
+    .row 
+        .col
+            button.btn(type="submit") Перезвоните мне
