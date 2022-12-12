@@ -1,10 +1,10 @@
 #text.container-fluid
     .row.justify-content-between
-        .col-6
+        .col-6.p-0
             h2
                 span Для начала: 
-                span текстовый блок в 2 колонки 
-        .col-6
+                span текстовый&nbsp;блок в 2 колонки 
+        .col-6.p-0
             p Для мелкого текста используется более удобочитаемый шрифт, ведь надо с заботой относиться к пользователям сайта. По этой же причине высота строк в этом абзаце немного увеличена, так как разреженный текст читать проще. Ну а чтобы тебе было интереснее, создай кнопку, вызывающую форму :)
             .arrowForm 
                 span Открыть форму!
@@ -12,8 +12,8 @@
 
 #image.container-fluid
     .row.justify-content-between
-        .col-6.p-0
-            img.img-fluid(src="../../assets/photos/nasa-rTZW4f02zY8-unsplash.jpg", alt="")
+        .col-6.p-0.overflow-hidden
+            img.img-fluid.imagecol(src="../../assets/photos/nasa-rTZW4f02zY8-unsplash.jpg", alt="")
         .col-6
             h2
                 span Добавим красок: 
@@ -21,20 +21,20 @@
             p По структуре этот блок очень похож на предыдущий, но две колонки в данном случае содержат разный контент: текст и изображение.   
 
 #cards.container-fluid
-    .row.align-items-center.justify-content-between.h-100
-        .col-4.d-flex.justify-content-center
+    .row.h-100.justify-content-between
+        .col-1.d-flex.justify-content-center.cardWrapper
             .card.bg-dark.text-white
                 img(class="card-img img-fluid" src="../../assets/photos/alexander-andrews-fsH1KjbdjE8-unsplash.jpg" alt="Card image")
                 .card-img-overlay
                     h1.card-title Блок с&nbsp;плитками и&nbsp;краткими текстами на&nbsp;них
-                    p.card-text Не забудь про эффект наведения, чтобы&nbsp;добавить&nbsp;интерактивности
-        .col-4.d-flex.justify-content-center
+                    p.card-text Не забудь про эффект наведения, чтобы&nbsp;добавить интерактивности
+        .col-1.d-flex.justify-content-center.cardWrapper
             .card.bg-dark.text-white
                 img(class="card-img img-fluid" src="../../assets/photos/johny-goerend-Oz2ZQ2j8We8-unsplash.jpg" alt="Card image")
                 .card-img-overlay
                     h1.card-title Так выглядит карточка, если на нее навести курсор
-                    p.card-text Она приподнимается, появляется тень в&nbsp;тон фотографии,&nbsp;текст&nbsp;непрозрачный
-        .col-4.d-flex.justify-content-center
+                    p.card-text Она приподнимается, появляется тень в&nbsp;тон фотографии,&nbsp;текст непрозрачный
+        .col-1.d-flex.justify-content-center.cardWrapper
             .card.bg-dark.text-white
                 img(class="card-img img-fluid" src="../../assets/photos/nate-rayfield-_WR6tUIAJe8-unsplash.jpg" alt="Card image")
                 .card-img-overlay
@@ -64,14 +64,15 @@
         div.d-inline А эта строка должна двигаться <span>вправо</span>
         div.d-inline / А эта строка должна двигаться <span>вправо</span>  
     .row.icons
-        .col 
+        .col
             img(class="img-fluid" src="../../assets/icons/coffee.svg" alt="ImacImg")
             h3 Иконка и текст
             p Иконки с описанием расположены в 3 колонки и появляются при скролле по очереди
-        .col 
+        .col
             img(class="img-fluid" src="../../assets/icons/feather.svg" alt="ImacImg")
             h3 Анимация
             p Появление иконок происходит через плавную смену прозрачности и небольшой подъем
+        span.break 
         .col
             img(class="img-fluid" src="../../assets/icons/star.svg" alt="ImacImg")
             h3 При наведении
@@ -88,19 +89,19 @@
             .wrapper
                 #slides.slides
                     span.slide
-                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                        p 1 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
                         i Lorem ipsum dolor sit amet.
                     span.slide 
-                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                        p 2 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
                         i Lorem ipsum dolor sit amet.
                     span.slide 
-                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                        p 3 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
                         i Lorem ipsum dolor sit amet.
                     span.slide 
-                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                        p 4 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
                         i Lorem ipsum dolor sit amet.
                     span.slide 
-                        p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
+                        p 5 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.
                         i Lorem ipsum dolor sit amet.
 #prefooter.container-fluid 
     .bg

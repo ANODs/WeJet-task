@@ -3,6 +3,7 @@ $(document).ready(function() {
 function animate(jQuerryTarget){
 
     items = jQuerryTarget.childNodes;
+    items = [items[0],items[1],items[3]]
     let counter = 0
     let inter = setInterval(function(){
 

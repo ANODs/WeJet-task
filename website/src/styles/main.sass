@@ -4,7 +4,7 @@
 
 body
     background: #222 !important
-
+    overflow-x: hidden 
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button 
@@ -34,7 +34,7 @@ input[type=number]
 
 .blured
     *:not(.popup, .popup *)
-        filter: blur(10px)
+        filter: blur(20px) grayscale(.2)
 
 a
     text-decoration: none !important
@@ -56,7 +56,7 @@ $dunit: 32px
 $qunit: 64px
 $ounit: 128px
 
-$slider-width: 970px
+$slider-width: 870px
 $slider-height: 330px
 
 $fcolorLight: #fff
@@ -68,7 +68,6 @@ $coldWhite: #EEF5F6
 ::selection
     color: $fcolorLight
     background: $accent
-    
 
 .loader
     z-index: 200
@@ -78,10 +77,10 @@ $coldWhite: #EEF5F6
 
 @keyframes preloader
     0% 
-        clip-path: inset(30% 100% 60% 0)
+        clip-path: inset(45% 100% 45% 0)
 
     90% 
-        clip-path: inset(30% 0 60% 0)
+        clip-path: inset(45% 0 45% 0)
 	
     100% 
         clip-path: inset(0 0 0 0)
@@ -98,13 +97,18 @@ header
     opacity: 0
     &.visible
         .headerTitleWhite
-        text-shadow: 0 0 2px #000
-        transition: .3s
-        opacity: 1
+            text-shadow: 0 0 2px #000
+            transition: .3s
+            opacity: 1
     &.active
         transition: .3s
         // z-index: 100
         opacity: 1
+    .hero
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
 .headerTitle
     z-index: 0
     position: relative
@@ -114,7 +118,6 @@ header
     &White
         z-index: 100
         position: relative
-        margin-top: 170px
         font-size: 80px
         font-family: Russo
         color: $coldWhite
@@ -149,9 +152,16 @@ header
     font-size: 12px
     color: $gray
 
-nav
+.navitemswrapper
+    display: flex
+    justify-content: flex-end !important
+
+.navbar-expand
     padding: $dunit $ounit !important
-    
+
+.navbar-brand
+    min-width: 192px
+
 a.nav-link
     &.active
         color: $fcolorLight !important
@@ -171,7 +181,7 @@ ul.navbar-nav
     height: 100vh
     top: 0
     img
-        height: 100vh
+        height: 110vh
         width: 100vw
         overflow: hidden
 
@@ -211,7 +221,7 @@ ul.navbar-nav
     background: $coldWhite
     padding: 196px 0
     h2
-        margin: 0 $ounit
+        margin: 0 80px 0 122px  
         max-width: 512px
         font-size: 60px
         font-family: Russo
@@ -220,7 +230,7 @@ ul.navbar-nav
             color: $accent
     
     p
-        margin: 0 $ounit
+        margin: 0 122px 0 80px
         font-family: Montserrat
         line-height: 24px
         font-size: 14px
@@ -229,7 +239,7 @@ ul.navbar-nav
 
     .arrowForm 
         width: 180px
-        margin: 40px $ounit 0 $ounit
+        margin: 40px $ounit 0 80px
         cursor: pointer
         span
             filter: invert(60%) sepia(83%) saturate(1915%) hue-rotate(143deg) brightness(98%) contrast(101%)
@@ -254,7 +264,7 @@ ul.navbar-nav
 #image
     overflow: hidden
     background: $fcolorDark
-    max-height: 755px
+    height: 755px
     h2
         margin: 200px $ounit 0 $ounit
         max-width: 512px
@@ -271,14 +281,20 @@ ul.navbar-nav
         font-size: 14px
         color: $gray
         max-width: 450px
-
+    .imagecol
+        max-height: 755px
+        height: auto
+        max-width: none !important
 #cards
+    .cardWrapper
+        width: 360px
+        padding: 0
+        margin: 0
     height: 900px
     background: rgb(255,255,255)
     background: linear-gradient(-207deg, rgba(255,255,255,1) 50%, rgba(238,245,246,1) 50%)
     .row
-        
-        padding: 0 $ounit
+        padding: 0 122px
         position: relative
         .d-flex:nth-child(1)
             .card::before
@@ -350,6 +366,9 @@ ul.navbar-nav
                 opacity: .7
                 transition: .2s
             p
+                font-size: 14px
+                line-height: 24px
+                font-family: montserrat
                 transition: .2s
                 opacity: .3
         &:hover
@@ -388,8 +407,8 @@ ul.navbar-nav
             mask-size: contain
             mask-repeat: no-repeat
             .text
-                width: 525px
-                transform: translate(-50%, calc(50% + 0px))
+                width: 550px
+                transform: translate(-50%, 50%)
                 left: 50%
                 bottom: 50%
                 position: fixed
@@ -425,7 +444,9 @@ ul.navbar-nav
         font-size: 14px
         color: $gray
         text-align: center
-
+    .break
+        flex-basis: 0%
+        height: 0
     .scroll
         &Left, &Right
             height: 70px
@@ -513,7 +534,7 @@ ul.navbar-nav
 
 #slidersec
     overflow-x: hidden
-    min-height: 1045px
+    height: 1045px
     background: $coldWhite
     padding: 0 220px
     h1
@@ -552,7 +573,7 @@ ul.navbar-nav
             position: absolute
             width: 100%
             height: 100%
-            background: linear-gradient(90deg, rgba(255,255,255,0) 35%, #eef5f688 40%)
+            background: linear-gradient(90deg, rgba(255,255,255,0) 50%, #eef5f688 60%)
         
 
     .slides 
@@ -581,7 +602,7 @@ ul.navbar-nav
         p
             font-size: 30px
             font-family: MontserratItalic
-            max-width: 570px
+            max-width: 740px
             color: $fcolorDark
             margin: 0
             padding: 0
@@ -602,6 +623,7 @@ ul.navbar-nav
             background: url('../../assets/icons/quote.svg')
 
 #prefooter
+    overflow: hidden
     z-index: 100
     background: $fcolorDark
     position: relative
@@ -611,13 +633,12 @@ ul.navbar-nav
     .bg 
         z-index: -10
         transform: scaleX(-1)
-        filter: FlipH
         top: 0
-        left: 0
+        left: 50%
         position: absolute
-        width: 100vw
         height: 100%
-        background: url('../../assets/photos/nasa-pd4lo70LdbI-unsplash.jpg') no-repeat scroll 40% 50%
+        width: 100%
+        background: url('../../assets/photos/nasa-pd4lo70LdbI-unsplash.jpg') no-repeat scroll 100% 50%
         background-size: 630px
         filter: invert(10%) sepia(23%) saturate(0%) hue-rotate(215deg) brightness(93%) contrast(91%)
     .row
@@ -839,3 +860,448 @@ ul.navbar-nav
                 transition: .2s
                 top: 5px
                 left: 5px
+
+
+@media only screen and (max-width: 1024px)
+    .navbar-expand
+        padding: 30px 60px !important
+    .nav-link
+        font-size: 12px !important
+        line-height: 16px
+    .bcgImg
+        img
+            height: 110vh
+    .spaceman
+        img
+            top: -200px
+            right: 10%
+    #text
+        h2
+            margin: 0 59px 0 59px  
+            font-size: 50px
+            line-height: 60px
+
+        p
+            margin: 0 59px 0 59px
+
+        .arrowForm
+            margin: 40px 128px 0 59px
+    #image
+        height: 720px
+        h2
+            margin: 200px 0 0 108px
+            max-width: 512px
+            font-size: 50px
+            line-height: 60px
+            font-family: Russo
+            color: $fcolorLight
+            span:nth-child(2)
+                color: $accent
+    
+        p
+            padding: 0
+            margin: 50px 0 0 108px
+            font-family: Montserrat
+            line-height: 24px
+            font-size: 14px
+            color: $gray
+            max-width: 360px
+
+        .imagecol
+            max-height: 720px
+            height: auto
+            max-width: none
+
+    #cards
+        height: 865px
+        .cardWrapper
+            width: 100%
+            max-width: 282px
+        .row
+            padding: 0 59px
+        .card
+            img
+                width: 100%
+                max-width: 282px
+                height: 464px
+            .card-img-overlay
+                h1
+                    width: 100%
+                    max-width: 242px
+                    line-height: 35px
+                    letter-spacing: 1px
+                    margin-top: 132px
+                    font-size: 30px
+                p
+                    word-wrap: nowrap
+                    max-width: 242px
+    #scroll
+        .icons
+            padding: 0 60px
+            margin-top: 150px
+            text-align: center
+            .col
+                max-width: 282px 
+        height: 2060px
+        h1
+            font-size: 50px
+            letter-spacing: 1px
+            line-height: 60px
+        p
+            margin: 59px 0 0 0
+
+    #slidersec
+        height: 1012px
+        padding: 200px 59px 
+        h1
+            margin: 0
+            font-size: 50px
+            letter-spacing: 1px
+            line-height: 60px
+
+    #prefooter
+        padding: 150px 59px
+        height: 590px
+        h1
+            margin: 0
+
+    #footer
+        overflow: hidden
+        padding: 160px 0 0 0
+        height: 546px
+        h1
+            margin-top: 0
+            font-size: 50px
+            line-height: 60px
+            word-spacing: 1px
+            
+@media only screen and (max-width: 768px)
+
+    .navbar-expand
+        padding: 29px 39px !important
+    .content
+        .bcgImg
+            img
+                height: 100vh
+    .navbar-brand
+        img
+            width: 192px
+    .headerTitle, .headerTitleWhite
+        font-size: 70px
+        line-height: 85px
+        letter-spacing: 1px
+        margin-bottom: 0
+    .headerTitleWhite
+        margin-top: 0px
+    .headerSubTitle
+        line-height: 20px
+        font-size: 12px
+        letter-spacing: 1px
+
+    .spaceman
+        img
+            top: -200px
+            right: 5%
+
+    #text
+        padding: 100px 39px !important
+        div
+            flex-direction: column
+        h2
+            margin: 0 0 30px 0
+            font-size: 50px
+            line-height: 60px
+            letter-spacing: 1px
+
+        p
+            font-size: 14px
+            line-height: 24px
+            margin: 0
+
+        .arrowForm
+            margin: 20px 39px 0 0
+
+    #image
+        height: 872px
+        div
+            flex-direction: column-reverse
+            div
+                max-height: 50%
+                width: 100vw !important
+                max-width: none
+                &:nth-child(2)
+                    padding: 100px 39px
+                
+        h2
+            margin: 0 0 50px 0
+    
+        p
+            margin: 0
+            max-width: 450px
+
+        .imagecol
+            position: relative
+            top: 100%
+            transform: translateY(-25%)
+            width: 100%
+            max-height: none
+            height: auto
+            max-width: none
+
+    #cards
+        padding: 100px 39px
+        height: 860px
+        div
+            flex-direction: column
+
+        .cardWrapper
+            width: 100%
+            max-width: 690px
+            height: 200px
+        .row
+            max-width: 690px
+            width: 100%
+            margin: auto
+            padding: 0 !important
+            .d-flex:nth-child(1)
+                .card::before
+                    all: unset
+                    content: ''
+                .card:hover::before
+                    all: unset
+                    content: ''
+
+            .d-flex:nth-child(2)
+                .card::before
+                    all: unset
+                    content: ''
+                .card:hover::before
+                    all: unset
+                    content: ''
+
+            .d-flex:nth-child(3)
+                .card::before
+                    all: unset
+                    content: ''
+                .card:hover::before
+                    all: unset
+                    content: ''
+        .card
+            position: relative
+            overflow: hidden
+            width: 100%
+            max-width: 690px
+            img
+                position: relative
+                top: 50%
+                transform: translateY(-50%)
+                width: 100%
+                max-width: 690px
+                height: auto
+            .card-img-overlay
+                padding: 60px 20px 0 20px
+                h1
+                    max-width: 500px
+                    line-height: 35px
+                    letter-spacing: 1px
+                    font-size: 30px
+                    margin: 0
+                p
+                    margin-top: 20px
+                    word-wrap: nowrap
+                    max-width: 650px
+            &:hover
+                transition: .2s
+                transform: translateY(calc( -50% - 0px ))
+                h1, p
+                    transition: .2s
+                    opacity: 1
+    #scroll
+        height: 2000px
+        h1
+            margin-top: 100px
+            font-size: 50px
+            letter-spacing: 1px
+            line-height: 60px
+        p
+            margin: 59px 0 0 0
+        .break
+            flex-basis: 100%
+            height: 0
+        .icons
+            margin-top: 70px
+            div
+                max-width: 282px
+                &:nth-child(4)
+                    margin-top: 70px !important
+                    
+            h3
+                letter-spacing: 1px
+                font-size: 30px
+                line-height: 40px
+            p
+                font-size: 12px
+                line-height: 24px
+    #slidersec
+        overflow: hidden
+        height: 715px !important
+        padding: 100px 39px
+        .wrapper
+            margin-top: 0
+        h1
+            margin: 0 0 70px 0
+            font-size: 50px
+            letter-spacing: 1px
+            line-height: 60px
+        p
+            max-width: 570px !important
+            font-size: 24px !important
+            line-height: 39px !important
+        i
+            margin-top: 70px !important
+
+    #prefooter
+        padding: 150px 59px
+        height: 590px
+        h1
+            margin: 0
+
+    #footer
+        overflow: hidden
+        padding: 160px 0 0 0
+        height: 546px
+        h1
+            margin-top: 0
+            font-size: 50px
+            line-height: 60px
+            word-spacing: 1px
+    #popup
+        padding: 70px 60px
+        width: 690px
+        height: 685px
+        h1
+            margin: 0 !important
+            font-size: 50px
+            line-height: 60px
+        input
+            font-size: 24px !important
+            padding: 0 !important
+        input, button
+            margin-top: 75px !important
+        .inputWrapper
+            height: 54px !important
+        .inputWrapper:before, .inputWrapper:after
+            font-size: 24px !important
+            margin: 0
+        .inputWrapper.active:after
+            font-size: 16px !important
+            margin: 0
+        .inputWrapper.active:before
+            padding-top: 10px
+        .inputWrapper:before
+            padding-top: 10px
+    .btn
+        padding: 26px 0
+        width: 354px
+        font-size: 16px
+        line-height: 16px
+        font-family: Montserrat
+        color: $fcolorLight
+        border: 2px solid $fcolorLight
+        border-radius: 0
+        &::after
+            transition: .2s
+            z-index: 100
+            content: ''
+            position: absolute
+            top: 10px
+            left: 10px
+            border-right: 2px solid $fcolorLight
+            border-bottom: 2px solid $fcolorLight
+            width: 352px
+            height: 70px
+        &:hover
+            background: $fcolorLight
+            color: $fcolorDark
+            margin: 95px 0 0 5px
+            transition: .2s margin
+            &::after
+                transition: .2s
+                top: 5px
+                left: 5px
+
+
+@media only screen and (max-width: 640px)
+    .navbar
+        padding: 20px 32px
+    .navbar-brand
+        min-width: 320px
+        display: flex
+        width: 100vw
+        justify-content: center
+        img
+            width: 114px 
+    .navitemswrapper
+        display: flex
+        justify-content: center
+
+    #popup
+        padding: 30px 30px
+        z-index: 500
+        background: $fcolorDark
+        width: 576px
+        height: 420px
+        h1
+            margin: 0 !important
+            font-size: 30px
+            line-height: 40px
+        input
+            font-size: 16px !important
+            padding: 0 !important
+        input, button
+            margin-top: 45px !important
+        .inputWrapper
+            height: 43px !important
+        .inputWrapper:before, .inputWrapper:after
+            font-size: 16px !important
+            margin: 0
+        .inputWrapper.active:after
+            font-size: 12px !important
+            margin: 0
+        .inputWrapper.active:before
+            padding-top: 10px
+        .inputWrapper:before
+            padding-top: 10px
+    .btn
+        padding: 26px 0
+        width: 354px
+        font-size: 16px
+        line-height: 16px
+        font-family: Montserrat
+        color: $fcolorLight
+        border: 2px solid $fcolorLight
+        border-radius: 0
+        &::after
+            transition: .2s
+            z-index: 100
+            content: ''
+            position: absolute
+            top: 10px
+            left: 10px
+            border-right: 2px solid $fcolorLight
+            border-bottom: 2px solid $fcolorLight
+            width: 352px
+            height: 70px
+        &:hover
+            background: $fcolorLight
+            color: $fcolorDark
+            margin: 95px 0 0 5px
+            transition: .2s margin
+            &::after
+                transition: .2s
+                top: 5px
+                left: 5px
+
+@media only screen and (max-width: 320px)
+    .navbar
+        padding: 2000px 32px !important

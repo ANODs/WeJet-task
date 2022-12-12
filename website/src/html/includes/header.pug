@@ -1,9 +1,9 @@
 header#header.p-0
-    nav.navbar.navbar-expand
-        .container-fluid.p-0
-            a.navbar-brand.p-0(href="#")
+    nav.navbar-expand.justify-content-between
+        .row.p-0.m-0.w-100
+            a.col.navbar-brand.p-0(href="#")
                 img.img-fluid(src="../../assets/photos/WeJet-logo.png", alt="Logo", width="192", height="45")
-            .collapse.navbar-collapse.d-flex.justify-content-end
+            .navitemswrapper.col.p-0
                 ul.navbar-nav.align-items-end
                     li.nav-item.p-0
                         a.nav-link.p-0(aria-current="page" href="#text") Текст
@@ -13,10 +13,10 @@ header#header.p-0
                         a.nav-link.p-0(aria-current="page" href="#scroll") Скролл
                     li.nav-item.p-0
                         a.nav-link.p-0(aria-current="page" href="#slidersec") Слайдер
-    .container
+    .container-fluid.hero
         .row
             .col-12.text-center
-                h1.headerTitleWhite Привет! Я твое
+                h1.headerTitleWhite Привет! Я&nbsp;твое
             .col-12
                 .spaceman
                     img(src="../../assets/photos/space_astronaut.png" data-parallax="0.02")
