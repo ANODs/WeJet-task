@@ -1664,6 +1664,34 @@ ul.navbar-nav
             width: auto !important
 
 @media only screen and (max-width: 320px)
+    #popup
+        .btn
+            padding: 26px 0
+            max-width: 354px
+            width: 100% 
+            font-size: 16px
+            line-height: 16px
+            font-family: Montserrat
+            color: $fcolorLight
+            border: 2px solid $fcolorLight
+            border-radius: 0
+            &::after
+                transition: .2s
+                z-index: 100
+                content: ''
+                position: absolute
+                top: 10px
+                left: 10px
+                border-right: 2px solid $fcolorLight
+                border-bottom: 2px solid $fcolorLight
+                max-width: 354px
+                width: 100% 
+                height: 70px
+            &:hover
+                background: $fcolorLight
+                color: $fcolorDark
+                margin: 95px 0 0 5px
+
     .navbar-brand
         img
             display: flex
