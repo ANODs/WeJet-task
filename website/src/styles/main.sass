@@ -204,19 +204,19 @@ canvas
 .navbar-brand
     min-width: 192px
 
-a.nav-link
-    &.active
-        color: $fcolorLight !important
-    color: #707070 !important
-    margin: 0 25px
-    font-size: 12px
-    font-family: Montserrat
-    &:hover
-        color: $fcolorLight !important
-        transition: ease-out .6s
 
 ul.navbar-nav
     height: 45px
+    .nav-link
+        &.active
+            color: $fcolorLight !important
+        color: #707070 !important
+        margin: 0 3.3vmin
+        font-size: 12px
+        font-family: Montserrat
+        &:hover
+            color: $fcolorLight !important
+            transition: ease-out .6s
 
 .bcgImg 
     // position: absolute
@@ -1323,7 +1323,7 @@ ul.navbar-nav
         .btn
             padding: 4vmin 0
             &::after
-                height: 13vmin
+                height: 10vmin
 
 @media only screen and (max-width: 640px)
     canvas
@@ -1344,8 +1344,14 @@ ul.navbar-nav
         img
             width: 172px
             height: 39px
-        .nav-link
-            margin: 0 15px !important
+    .nav-link
+        margin: 0 15px !important
+        // &:nth-child(1)
+        //     margin: 0 0 0 15px !important
+        // &:last-child
+        //     margin: 0 15px 0 0 !important
+                    
+                
     .arrowBottom
         display: none
     .hero
