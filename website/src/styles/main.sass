@@ -209,7 +209,7 @@ a.nav-link
         color: $fcolorLight !important
     color: #707070 !important
     margin: 0 25px
-    font-size: 16px
+    font-size: 12px
     font-family: Montserrat
     &:hover
         color: $fcolorLight !important
@@ -223,6 +223,7 @@ ul.navbar-nav
     height: 100vh
     top: 0
     img
+        filter: saturate(1.15) brightness(1.14) contrast(1.2)
         height: 110vh
         width: 100vw
         overflow: hidden
@@ -286,7 +287,7 @@ ul.navbar-nav
         margin: 40px $ounit 0 122px
         cursor: pointer
         span
-            filter: invert(60%) sepia(83%) saturate(1915%) hue-rotate(143deg) brightness(98%) contrast(101%)
+            color: $accent
             font-size: 14px
             font-family: Montserrat
         img
@@ -294,16 +295,14 @@ ul.navbar-nav
             margin-left: 10px
             height: 11px
             width: 17px
-            //если вы это заметили, то знайте, тут все рассчитанно https://codepen.io/sosuke/pen/Pjoqqp
-            filter: invert(60%) sepia(83%) saturate(1915%) hue-rotate(143deg) brightness(98%) contrast(101%)
         &:hover
             span
-                filter: invert(85%) sepia(24%) saturate(4285%) hue-rotate(144deg) brightness(95%) contrast(94%)
+                color: #27d8ec
                 
             img
                 transition: .2s
                 margin-left: 20px
-                filter: invert(85%) sepia(24%) saturate(4285%) hue-rotate(144deg) brightness(95%) contrast(94%)
+                filter: brightness(108%) contrast(101%)
 
 #image
     overflow: hidden
@@ -328,7 +327,11 @@ ul.navbar-nav
     .imagecol
         max-height: 755px
         height: auto
-        max-width: none !important
+        position: relative
+        max-width: none!important
+        left: 50% !important
+        transform: translateX(-50%)
+
 #cards
     .cardWrapper
         width: 360px
@@ -544,8 +547,8 @@ ul.navbar-nav
         div:hover
             transition: all .2s
             img 
-                filter: none  
-                filter: invert(100%)  
+                transition: .2s
+                filter: saturate(0) brightness(200%)
             h3,p  
                 color: $fcolorLight !important
             p::after
@@ -561,7 +564,6 @@ ul.navbar-nav
             color: $gray
         img
             transition: all .2s
-            filter: invert(78%) sepia(26%) saturate(175%) hue-rotate(152deg) brightness(90%) contrast(87%)
             margin-bottom: 30px
             width: 42px
         p
@@ -616,14 +618,14 @@ ul.navbar-nav
         // width: $slider-width
         height: $slider-height
         z-index: 1
-        &::after
-            pointer-events: none
-            top: 0
-            content: ''
-            position: absolute
-            width: 100%
-            height: 100%
-            background: linear-gradient(90deg, rgba(255,255,255,0) 50%, #eef5f688 60%)
+        // &::after
+        //     pointer-events: none
+        //     top: 0
+        //     content: ''
+        //     position: absolute
+        //     width: 100%
+        //     height: 100%
+        //     background: linear-gradient(90deg, rgba(255,255,255,0) 50%, #eef5f688 60%)
         
 
     .slides 
@@ -646,7 +648,7 @@ ul.navbar-nav
         cursor: pointer
         display: flex
         flex-direction: column
-        transition: all 1s
+        transition: all 1s, opacity .1s
         position: relative
         border-radius: 2px
         p
@@ -955,6 +957,9 @@ ul.navbar-nav
             max-width: 1366px
             margin: auto
             position: relative
+        .wrapper
+            max-width: 200%
+            // width: 200%
     #prefooter
         .row
             max-width: 1366px
@@ -1076,7 +1081,7 @@ ul.navbar-nav
             right: calc(50% - 400px)
     #text
         h2
-            margin: 0 59px 0 59px  
+            margin: 0 55px 0 55px  
             font-size: 50px
             line-height: 60px
 
@@ -1141,6 +1146,16 @@ ul.navbar-nav
         height: 590px
         h1
             margin: 0
+        .bg
+            z-index: -10
+            transform: scaleX(-1)
+            top: 0
+            left: 50%
+            position: absolute
+            height: 100%
+            width: 100%
+            background: url(../../assets/photos/nasa-pd4lo70LdbI-unsplash.png) no-repeat scroll 90% 300%
+            background-size: 498px
 
     #footer
         overflow: hidden
@@ -1216,6 +1231,7 @@ ul.navbar-nav
             max-width: 450px
 
         .imagecol
+            left: 0 !important
             position: relative
             top: 100%
             transform: translateY(-25%)
@@ -1288,8 +1304,11 @@ ul.navbar-nav
             word-spacing: 1px
             margin: 0
         .bg
-            background-size: 400px 
+            background: url(../../assets/photos/nasa-pd4lo70LdbI-unsplash.png) no-repeat scroll 120% 100%
+            background-size: 420px 
             transform: scaleX(-1)
+        .btn
+            margin-top: 50px
 
     #footer
         overflow: hidden

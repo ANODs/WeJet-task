@@ -54,8 +54,9 @@ var Visible = function (target) {
 // Запускаем функцию при прокрутке страницы
 window.addEventListener('scroll', function() {
   Visible (element);
+  console.clear();
 });
 
 // А также запустим функцию сразу. А то вдруг, элемент изначально видно
-Visible (element);
+// Visible (element);
 });

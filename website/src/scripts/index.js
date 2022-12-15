@@ -12,6 +12,7 @@ $(document).ready(function(){
     //     }
     //     return false;
     // }
+    
     header = document.querySelector('#header');
     let interval1 = setTimeout(() => {
         header.classList.toggle('visible');

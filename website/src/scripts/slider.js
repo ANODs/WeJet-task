@@ -34,6 +34,14 @@ $(document).ready(function() {
     // Transition events
     items.addEventListener('transitionend', checkIndex);
     
+    function getActive (){
+        console.log(slides)
+        $(slides).map((id,slide)=>{slide.style.opacity = .2})
+        slides[index+1].style.opacity = 1
+    }
+
+    getActive()
+
     function dragStart (e) {
         e = e || window.event;
         e.preventDefault();
@@ -107,6 +115,8 @@ $(document).ready(function() {
         index = 0;
         }
         
+        getActive()
+
         allowShift = true;
     }
     }
