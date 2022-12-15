@@ -1,74 +1,78 @@
-$(document).ready(function() {
-    let itemsLeft = document.querySelector('.row.scrollLeft').querySelectorAll('DIV');
-    let itemsRight = document.querySelector('.row.scrollRight').querySelectorAll('DIV');
-    let delta = 0
-    let step = 24
-    console.log(itemsLeft)
+$(document).ready(function(){
+    
 
-    $(document).ready(function() {
-        document.body.addEventListener('wheel',(event)=>{
+    document.body.addEventListener('wheel',()=>{
+        if(backgroundImage.speed >= -1){
+            setTimeout(()=>{backgroundImage.speed = -6},0)
+            setTimeout(()=>{backgroundImage.speed = -5},20)
+            setTimeout(()=>{backgroundImage.speed = -4},80)
+            setTimeout(()=>{backgroundImage.speed = -3},120)
+            setTimeout(()=>{backgroundImage.speed = -2},160)
+            setTimeout(()=>{backgroundImage.speed = -1},200)
+            setTimeout(()=>{backgroundImage.speed = -.5},300)
+            setTimeout(()=>{backgroundImage.speed = -.3},400)
+        }
+    })
 
-            delta += (event.deltaY/100 < 0 ? event.deltaY/100 : -event.deltaY/100)
+    const canvas = document.getElementById('canvas');
 
-            if(delta % step == 0)
-            {
-                delta %= step
-                itemsLeft[0].style.transition = '0s'
-                itemsLeft[1].style.transition = '0s'
-                itemsLeft[2].style.transition = '0s'
+    canvas.width = 10490
+    canvas.height = 110; //document.height is obsolete
+    const ctx = canvas.getContext('2d');
 
-                itemsRight[0].style.transition = '0s'
-                itemsRight[1].style.transition = '0s'
-                itemsRight[2].style.transition = '0s'
+    const wordsL = ["Эта строка должна двигаться"," влево"," / Эта строка должна двигаться"," влево"," / ","Эта строка должна двигаться"," влево"," / Эта строка должна двигаться"," влево"," / ","Эта строка должна двигаться"," влево"," / Эта строка должна двигаться"," влево"," / ","Эта строка должна двигаться"," влево"," / Эта строка должна двигаться"," влево"," / ","Эта строка должна двигаться"," влево"," / Эта строка должна двигаться"," влево"," / ","Эта строка должна двигаться"," влево"]
+    const colors = ["#555555", "#00CAE5","#555555", "#00CAE5", "#555555","#555555", "#00CAE5","#555555", "#00CAE5", "#555555","#555555", "#00CAE5","#555555", "#00CAE5", "#555555","#555555", "#00CAE5","#555555", "#00CAE5", "#555555","#555555", "#00CAE5","#555555", "#00CAE5", "#555555","#555555", "#00CAE5","#555555", "#00CAE5", "#555555","#555555", "#00CAE5","#555555", "#00CAE5", "#555555","#555555", "#00CAE5","#555555", "#00CAE5", "#555555","#555555", "#00CAE5","#555555", "#00CAE5", "#555555"]
+    const wordsR = ["Эта строка должна двигаться"," вправо"," / Эта строка должна двигаться"," вправо"," / ","Эта строка должна двигаться"," вправо"," / Эта строка должна двигаться"," вправо"," / ","Эта строка должна двигаться"," вправо"," / Эта строка должна двигаться"," вправо"," / ","Эта строка должна двигаться"," вправо"," / Эта строка должна двигаться"," вправо"," / ","Эта строка должна двигаться"," вправо"," / Эта строка должна двигаться"," вправо"," / Эта строка должна дви..."]
+    const backgroundImage = {
+        x: 0,
+        speed: -.3,
+        move: function () {
+            this.x += this.speed;
+            this.x %= canvas.width;
+        },
 
-                console.log(delta)
+        draw: function () {
 
-                delta1 = delta * itemsLeft[0].offsetWidth / step
-                delta2 = itemsLeft[1].offsetWidth + delta1 + 100
-                delta3 = itemsLeft[2].offsetWidth + delta2 - 50
-
-                delta4 = (-delta * itemsRight[0].offsetWidth / step) -itemsRight[0].offsetWidth
-                delta5 = (itemsRight[1].offsetWidth + delta4 + 100)
-                delta6 = (itemsRight[2].offsetWidth + delta5 - 50)
-
-                delta %= step
-
-                delta1 = delta * itemsLeft[0].offsetWidth / step
-                delta2 = itemsLeft[1].offsetWidth + delta1 + 100
-                delta3 = itemsLeft[2].offsetWidth + delta2 - 50
-
-                delta4 = (-delta * itemsRight[0].offsetWidth / step) -itemsRight[0].offsetWidth
-                delta5 = (itemsRight[1].offsetWidth + delta4 + 100)
-                delta6 = (itemsRight[2].offsetWidth + delta5 - 50)
-            }
-            else
-            {
-                itemsLeft[0].style.transition = '.4s'
-                itemsLeft[1].style.transition = '.4s'
-                itemsLeft[2].style.transition = '.4s'
-
-                itemsRight[0].style.transition = '.4s'
-                itemsRight[1].style.transition = '.4s'
-                itemsRight[2].style.transition = '.4s'
-
-                delta1 = delta * itemsLeft[0].offsetWidth / step
-                delta2 = itemsLeft[1].offsetWidth + delta1 + 100
-                delta3 = itemsLeft[2].offsetWidth + delta2 - 50
-
-                delta4 = (-delta * itemsRight[0].offsetWidth / step) -itemsRight[0].offsetWidth
-                delta5 = (itemsRight[1].offsetWidth + delta4 + 100)
-                delta6 = (itemsRight[2].offsetWidth + delta5 - 50)
+            let offsetL = 0
+            let offsetR = 0
+            for (let i = 0; i < wordsL.length; i++) {
+                offsetL += ctx.measureText(wordsL[i]).width
+                let x = this.x + offsetL
+                ctx.fillStyle = colors[i]
+                ctx.font = "48px Russo";
+                ctx.fillText(wordsL[i], x % canvas.width - ctx.measureText(wordsL[i]).width, 36);
+                if (this.speed < 0) {
+                    ctx.fillText(wordsL[i], x + canvas.width - ctx.measureText(wordsL[i]).width, 36);
+                } else {
+                    ctx.fillText(wordsL[i], x - ctx.measureText(wordsL[i]).width, 36);
+                }
             }
 
+            for (let i = 0; i < wordsR.length; i++) {
+                offsetR += ctx.measureText(wordsR[i]).width
+                let x = -this.x + offsetR
+                ctx.fillStyle = colors[i]
+                ctx.font = "48px Russo";
+                ctx.fillText(wordsR[i], x % canvas.width - ctx.measureText(wordsR[i]).width, 92);
+                if (this.speed > 0) {
+                    ctx.fillText(wordsR[i], x + canvas.width - ctx.measureText(wordsR[i]).width, 92);
+                } else {
+                    ctx.fillText(wordsR[i], x - ctx.measureText(wordsR[i]).width, 92);
+                }
+            }
+            
+        },
+    };
 
-            itemsLeft[0].style.transform = 'translateX('+delta1+'px)';
-            itemsLeft[1].style.transform = 'translateX('+delta2+'px)';
-            itemsLeft[2].style.transform = 'translateX('+delta3+'px)';
+    function updateCanvas() {
+        backgroundImage.move();
 
-            itemsRight[0].style.transform = 'translateX('+delta4+'px)';
-            itemsRight[1].style.transform = 'translateX('+delta5+'px)';
-            itemsRight[2].style.transform = 'translateX('+delta6+'px)';
-            // console.log(delta3)
-        })
-    });
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        backgroundImage.draw();
+
+        requestAnimationFrame(updateCanvas);
+    }
+
+    // start calling updateCanvas once the image is loaded
+    updateCanvas();
 });

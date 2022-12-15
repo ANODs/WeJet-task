@@ -25,19 +25,19 @@
         .col-1.d-flex.justify-content-center.cardWrapper
             .card.bg-dark.text-white
                 img(class="card-img img-fluid" src="../../assets/photos/alexander-andrews-fsH1KjbdjE8-unsplash.jpg" alt="Card image")
-                .card-img-overlay
+                .card-img-overlay.d-flex.justify-content-end
                     h1.card-title Блок с&nbsp;плитками и&nbsp;краткими текстами на&nbsp;них
                     p.card-text Не забудь про эффект наведения, чтобы&nbsp;добавить интерактивности
         .col-1.d-flex.justify-content-center.cardWrapper
             .card.bg-dark.text-white
                 img(class="card-img img-fluid" src="../../assets/photos/johny-goerend-Oz2ZQ2j8We8-unsplash.jpg" alt="Card image")
-                .card-img-overlay
+                .card-img-overlay.d-flex.justify-content-end
                     h1.card-title Так выглядит карточка, если на нее навести курсор
                     p.card-text Она приподнимается, появляется тень в&nbsp;тон фотографии,&nbsp;текст непрозрачный
         .col-1.d-flex.justify-content-center.cardWrapper
             .card.bg-dark.text-white
                 img(class="card-img img-fluid" src="../../assets/photos/nate-rayfield-_WR6tUIAJe8-unsplash.jpg" alt="Card image")
-                .card-img-overlay
+                .card-img-overlay.d-flex.justify-content-end
                     h1.card-title Фотография на фоне карточки не должна мешать
                     p.card-text Текст здесь на первом месте
 #scroll.container-fluid 
@@ -55,14 +55,15 @@
                 .text Это изображение зафиксировано, но&nbsp;при&nbsp;скролле создается <br> ощущение, что&nbsp;оно&nbsp;движется внутри экрана.
     .row.align-items-center.justify-content-between
         p Строки текста, расположенные ниже, при скролле должны сами по себе <br> двигаться, как бесконечные бегущие строки.
-    .row.scrollLeft(data-scroll data-scroll-direction="horizontal")
-        div.d-inline / Эта строка должна двигаться <span>влево</span> /
-        div.d-inline Эта строка должна двигаться <span>влево</span>
-        div.d-inline / Эта строка должна двигаться <span>влево</span>
-    .row.scrollRight
-        div.d-inline / А эта строка должна двигаться <span>вправо</span> /
-        div.d-inline А эта строка должна двигаться <span>вправо</span>
-        div.d-inline / А эта строка должна двигаться <span>вправо</span>  
+    //- .row.scrollLeft
+    //-     div.d-inline / Эта строка должна двигаться <span>влево</span> /
+    //-     div.d-inline Эта строка должна двигаться <span>влево</span>
+    //-     div.d-inline / Эта строка должна двигаться <span>влево</span>
+    //- .row.scrollRight
+    //-     div.d-inline / А эта строка должна двигаться <span>вправо</span> /
+    //-     div.d-inline А эта строка должна двигаться <span>вправо</span>
+    //-     div.d-inline / А эта строка должна двигаться <span>вправо</span>  
+    canvas#canvas
     .row.icons
         .col
             img(class="img-fluid" src="../../assets/icons/coffee.svg" alt="ImacImg")

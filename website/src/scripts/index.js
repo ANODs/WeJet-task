@@ -1,4 +1,17 @@
-$(document).ready(function() {
+
+
+$(document).ready(function(){
+
+    // function isDescendant(parent, child) {
+    //     let node = child.parentNode;
+    //     while (node != null) {
+    //         if (node == parent) {
+    //             return true;
+    //         }
+    //         node = node.parentNode;
+    //     }
+    //     return false;
+    // }
     header = document.querySelector('#header');
     let interval1 = setTimeout(() => {
         header.classList.toggle('visible');
@@ -26,7 +39,9 @@ $(document).ready(function() {
         $(document.body).removeClass('blured')
 })
 
-
+// $( "body" ).click(function( e ) {
+//     console.log(!isDescendant(doucument.body.querySelector('.popup'), e.target))
+// })
 
     document.body.querySelectorAll('INPUT').forEach((item)=>{
 
