@@ -816,6 +816,7 @@ ul.navbar-nav
         transition: .3s
         position: relative
         height: 6.2vmin
+        max-height: 54px
         input
             padding: 0 0 1vmin 0
             font-size: 3.2vmin
@@ -894,6 +895,7 @@ ul.navbar-nav
         position: relative
         padding: 3.2vmin 0
         max-width: 354px
+        max-height: 68px
         width: 100%
         font-size: 16px
         line-height: 16px
@@ -965,6 +967,68 @@ ul.navbar-nav
             max-width: 1366px
             margin: auto
             position: relative
+    #popup
+        padding: 100px 9vmin
+        z-index: 500
+        background: $fcolorDark 
+        max-width: 930px
+        width: 100vmin
+        max-height: 740px
+        height: 100vmin
+        position: fixed
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        .col 
+            position: relative
+        h1
+            font-family: Russo
+            font-size: 7.6vmin
+            line-height: 8.2vmin
+            word-spacing: 2px
+            color: $accent
+            span:nth-child(2)
+                display: block
+                color: $fcolorLight
+        .x-mark
+            cursor: pointer
+            opacity: .3
+            filter: invert(1)
+            width: 3vmin
+            height: 3vmin
+            position: absolute
+            right: 4vmin
+            top: 4vmin
+
+        .inputWrapper
+            transition: .3s
+            position: relative
+            height: 6.2vmin
+            max-height: 54px
+            input
+                padding: 0 0 1vmin 0
+                font-size: 3.2vmin
+                font-family: Russo
+                height: 100%
+                display: block
+                margin-top: 9vmin
+                width: 100%
+                background: none
+                border: none
+                border-bottom: 2px solid $fcolorLight
+                color: $fcolorLight  
+                &:focus
+                    outline: none
+            &::before, &::after
+                transition: .3s
+                font-size: 2.3vmin
+                font-family: Montserrat
+                color: $fcolorLight
+                z-index: -10
+                display: block
+                position: absolute
+                top: 0
+                left: 0 
 @media only screen and (max-width: 1300px)
     #cards
         height: 865px
